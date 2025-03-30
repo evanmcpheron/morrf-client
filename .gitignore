@@ -1,0 +1,90 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+jspm_packages/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+*.lcov
+
+# Miscellaneous
+*.log
+*.lock
+*.cache
+*.tmp
+*.pid
+*.seed
+*.pid.lock
+
+# React Native
+.expo/
+.expo-shared/
+
+# Parcel-bundler cache
+.cache/
+
+# Storybook files
+storybook-static/
+
+# TypeScript
+*.tsbuildinfo
+
+# ESLint cache
+.eslintcache
+
+# Prettier cache
+.prettiercache
+
+# Next.js
+.next/
+
+# Gatsby files
+.cache/
+public/
+
+# Firebase
+.firebaserc
+.firebase/
+
+# VSCode settings
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/*.code-workspace
+
+# MacOS files
+.AppleDouble
+.LSOverride
+
+# Yarn Integrity file
+.yarn-integrity
+
+# npm package-lock
+package-lock.json
