@@ -1,7 +1,6 @@
-import React from 'react';
 import { withPermission } from '../withPermission';
 
-const CustomersWidget = (props: any) => {
+const CustomersWidget = () => {
   return (
     <div>
       <button>Edit Customer</button>
