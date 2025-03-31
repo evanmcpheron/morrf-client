@@ -85,6 +85,3 @@ public/
 
 # Yarn Integrity file
 .yarn-integrity
-
-# npm package-lock
-package-lock.json

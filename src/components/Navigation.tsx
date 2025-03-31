@@ -23,7 +23,7 @@ export const Navigation = () => {
     <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
       <div>{role}</div>
       <Link to="/">Dashboard</Link>
-      {hasAnyPolicy(['VIEW_ORDERS', 'EDIT_ORDERS']) && <Link to="/orders">Orderss</Link>}
+      {hasAnyPolicy(['VIEW_ORDERS', 'EDIT_ORDERS']) && <Link to="/orders">Orders</Link>}
       {hasAnyPolicy(['VIEW_CUSTOMERS', 'EDIT_CUSTOMERS']) && <Link to="/customers">Customers</Link>}
       {hasAnyPolicy(['VIEW_REPORTS', 'EDIT_REPORTS']) && <Link to="/reports">Reports</Link>}
       {hasAnyPolicy(['VIEW_SETTINGS', 'EDIT_SETTINGS']) && <Link to="/settings">Settings</Link>}
