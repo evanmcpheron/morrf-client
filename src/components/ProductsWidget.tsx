@@ -1,4 +1,4 @@
-import { withPermission } from "../withPermission";
+import { withPermission } from '../withPermission';
 
 const ProductsWidget = () => {
   return (
@@ -10,6 +10,6 @@ const ProductsWidget = () => {
 };
 
 export default withPermission(ProductsWidget, {
-  requiredPoliciesAny: ["EDIT_PRODUCTS"],
-  fallback: "/login",
+  requiredPoliciesAny: ['EDIT_PRODUCTS'],
+  fallback: '/login',
 });

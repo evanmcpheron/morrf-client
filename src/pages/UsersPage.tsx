@@ -1,4 +1,4 @@
-import { withPermission } from "../withPermission";
+import { withPermission } from '../withPermission';
 
 const UsersPage = () => {
   return (
@@ -9,6 +9,6 @@ const UsersPage = () => {
 };
 
 export default withPermission(UsersPage, {
-  requiredPoliciesAny: ["VIEW_USERS", "EDIT_USERS"],
-  fallback: "/",
+  requiredPoliciesAny: ['VIEW_USERS', 'EDIT_USERS'],
+  fallback: '/',
 });

@@ -1,5 +1,5 @@
-import { withPermission } from "../withPermission";
-import OrdersWidget from "../components/OrdersWidget";
+import { withPermission } from '../withPermission';
+import OrdersWidget from '../components/OrdersWidget';
 
 const OrdersPage = () => {
   return (
@@ -11,6 +11,6 @@ const OrdersPage = () => {
 };
 
 export default withPermission(OrdersPage, {
-  requiredPoliciesAny: ["VIEW_ORDERS", "EDIT_ORDERS"],
-  fallback: "/",
+  requiredPoliciesAny: ['VIEW_ORDERS', 'EDIT_ORDERS'],
+  fallback: '/',
 });

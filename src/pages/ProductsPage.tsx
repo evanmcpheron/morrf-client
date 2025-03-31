@@ -1,5 +1,5 @@
-import ProductsWidget from "../components/ProductsWidget";
-import { withPermission } from "../withPermission";
+import ProductsWidget from '../components/ProductsWidget';
+import { withPermission } from '../withPermission';
 
 const ProductsPage = () => {
   return (
@@ -11,6 +11,6 @@ const ProductsPage = () => {
 };
 
 export default withPermission(ProductsPage, {
-  requiredPoliciesAny: ["VIEW_PRODUCTS", "EDIT_PRODUCTS"],
-  fallback: "/",
+  requiredPoliciesAny: ['VIEW_PRODUCTS', 'EDIT_PRODUCTS'],
+  fallback: '/',
 });

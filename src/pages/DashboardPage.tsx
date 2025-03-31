@@ -1,4 +1,4 @@
-import { withPermission } from "../withPermission";
+import { withPermission } from '../withPermission';
 
 const DashboardPage = () => {
   return (
@@ -9,6 +9,6 @@ const DashboardPage = () => {
 };
 
 export default withPermission(DashboardPage, {
-  requiredPoliciesAny: ["VIEW_DASHBOARD", "EDIT_DASHBOARD"],
-  fallback: "/login",
+  requiredPoliciesAny: ['VIEW_DASHBOARD', 'EDIT_DASHBOARD'],
+  fallback: '/login',
 });

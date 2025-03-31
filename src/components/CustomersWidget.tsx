@@ -1,5 +1,5 @@
-import React from "react";
-import { withPermission } from "../withPermission";
+import React from 'react';
+import { withPermission } from '../withPermission';
 
 const CustomersWidget = (props: any) => {
   return (
@@ -10,5 +10,5 @@ const CustomersWidget = (props: any) => {
 };
 
 export default withPermission(CustomersWidget, {
-  requiredPolicy: "EDIT_CUSTOMERS",
+  requiredPolicy: 'EDIT_CUSTOMERS',
 });

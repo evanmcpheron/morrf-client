@@ -6,7 +6,7 @@ import {
   useMemo,
   useState,
   useCallback,
-} from "react";
+} from 'react';
 
 interface PolicyContextValue {
   policies: string[];
@@ -36,35 +36,35 @@ interface PolicyProviderProps {
 export function PolicyProvider({ children, socketUrl }: PolicyProviderProps) {
   const [policies, setPolicies] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const role = "STAFF";
+  const role = 'STAFF';
 
   useEffect(() => {
     const socket = new WebSocket(socketUrl);
 
     socket.onopen = () => {
-      console.log("WebSocket connected in PolicyProvider");
-      socket.send(JSON.stringify({ type: "SUBSCRIBE_USER", role }));
+      console.log('WebSocket connected in PolicyProvider');
+      socket.send(JSON.stringify({ type: 'SUBSCRIBE_USER', role }));
     };
 
-    socket.onmessage = (event) => {
+    socket.onmessage = event => {
       try {
         const data = JSON.parse(event.data);
 
-        if (data.type === "POLICY_UPDATE") {
+        if (data.type === 'POLICY_UPDATE') {
           setPolicies(data.newPolicies);
           setIsLoading(false);
         }
       } catch (error) {
-        console.error("Error parsing WebSocket message", error);
+        console.error('Error parsing WebSocket message', error);
       }
     };
 
-    socket.onerror = (error) => {
-      console.error("WebSocket error in PolicyProvider:", error);
+    socket.onerror = error => {
+      console.error('WebSocket error in PolicyProvider:', error);
     };
 
     socket.onclose = () => {
-      console.log("WebSocket closed in PolicyProvider");
+      console.log('WebSocket closed in PolicyProvider');
     };
 
     return () => {
@@ -82,7 +82,7 @@ export function PolicyProvider({ children, socketUrl }: PolicyProviderProps) {
     (policy: string) => {
       return policies.includes(policy);
     },
-    [policies]
+    [policies],
   );
 
   /**
@@ -93,9 +93,9 @@ export function PolicyProvider({ children, socketUrl }: PolicyProviderProps) {
    */
   const hasAnyPolicy = useCallback(
     (policiesToCheck: string[]) => {
-      return policiesToCheck.some((p) => policies.includes(p));
+      return policiesToCheck.some(p => policies.includes(p));
     },
-    [policies]
+    [policies],
   );
 
   const value = useMemo<PolicyContextValue>(() => {
@@ -110,9 +110,7 @@ export function PolicyProvider({ children, socketUrl }: PolicyProviderProps) {
 
   console.log(`🚀 ~ PolicyProvider.tsx:86 ~ PolicyProvider ~ value: \n`, value);
 
-  return (
-    <PolicyContext.Provider value={value}>{children}</PolicyContext.Provider>
-  );
+  return <PolicyContext.Provider value={value}>{children}</PolicyContext.Provider>;
 }
 
 /**
@@ -124,8 +122,8 @@ export function PolicyProvider({ children, socketUrl }: PolicyProviderProps) {
  * @throws {Error} If the hook is used outside of a PolicyProvider.
  *
  * @returns {PolicyContextType} The current context value for the PolicyContext.
- * 
- * 
+ *
+ *
  * @property {string[]} policies - The list of policies currently available.
  * @property {string} role - The role of the user, e.g., "STAFF".
  * @property {boolean} isLoading - Indicates whether the policy data is still loading.
@@ -136,7 +134,7 @@ export const usePolicy = () => {
   const context = useContext(PolicyContext);
 
   if (!context) {
-    throw new Error("usePolicy must be used within a PolicyProvider");
+    throw new Error('usePolicy must be used within a PolicyProvider');
   }
   return context;
 };

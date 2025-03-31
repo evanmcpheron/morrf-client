@@ -1,6 +1,6 @@
-import React, { ComponentType, useMemo, useState, useEffect } from "react";
-import { usePolicy } from "./PolicyProvider";
-import { Navigate } from "react-router";
+import React, { ComponentType, useMemo, useState, useEffect } from 'react';
+import { usePolicy } from './PolicyProvider';
+import { Navigate } from 'react-router';
 
 interface WithPermissionOptions {
   requiredPolicy?: string;
@@ -29,16 +29,11 @@ interface WithPermissionOptions {
  */
 export function withPermission<P extends object>(
   WrappedComponent: ComponentType<P>,
-  options: WithPermissionOptions
+  options: WithPermissionOptions,
 ) {
   return function WithPermissionHOC(props: P) {
     const { hasPolicy, hasAnyPolicy, isLoading } = usePolicy();
-    const {
-      requiredPolicy,
-      requiredPoliciesAny,
-      requiredPoliciesAll,
-      fallback = null,
-    } = options;
+    const { requiredPolicy, requiredPoliciesAny, requiredPoliciesAll, fallback = null } = options;
 
     const [loading, setLoading] = useState(true);
 
@@ -56,16 +51,10 @@ export function withPermission<P extends object>(
         return hasAnyPolicy(requiredPoliciesAny);
       }
       if (requiredPoliciesAll) {
-        return requiredPoliciesAll.every((pol) => hasPolicy(pol));
+        return requiredPoliciesAll.every(pol => hasPolicy(pol));
       }
       return false;
-    }, [
-      requiredPolicy,
-      requiredPoliciesAny,
-      requiredPoliciesAll,
-      hasPolicy,
-      hasAnyPolicy,
-    ]);
+    }, [requiredPolicy, requiredPoliciesAny, requiredPoliciesAll, hasPolicy, hasAnyPolicy]);
 
     if (loading) {
       return <div>Loading...</div>;

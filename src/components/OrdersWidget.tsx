@@ -1,9 +1,9 @@
-import { usePolicy } from "../PolicyProvider";
-import { withPermission } from "../withPermission";
+import { usePolicy } from '../PolicyProvider';
+import { withPermission } from '../withPermission';
 
 const OrdersWidget = () => {
   const { hasPolicy } = usePolicy();
-  const canEditOrders = hasPolicy("EDIT_ORDERS");
+  const canEditOrders = hasPolicy('EDIT_ORDERS');
 
   return (
     <div>
@@ -14,5 +14,5 @@ const OrdersWidget = () => {
 };
 
 export default withPermission(OrdersWidget, {
-  requiredPoliciesAny: ["VIEW_ORDERS", "EDIT_ORDERS"],
+  requiredPoliciesAny: ['VIEW_ORDERS', 'EDIT_ORDERS'],
 });

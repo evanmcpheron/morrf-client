@@ -1,5 +1,5 @@
-import { withPermission } from "../withPermission";
-import CustomersWidget from "../components/CustomersWidget";
+import { withPermission } from '../withPermission';
+import CustomersWidget from '../components/CustomersWidget';
 
 const SettingsPage = () => {
   return (
@@ -11,6 +11,6 @@ const SettingsPage = () => {
 };
 
 export default withPermission(SettingsPage, {
-  requiredPoliciesAny: ["VIEW_SETTINGS", "EDIT_SETTINGS"],
-  fallback: "/",
+  requiredPoliciesAny: ['VIEW_SETTINGS', 'EDIT_SETTINGS'],
+  fallback: '/',
 });

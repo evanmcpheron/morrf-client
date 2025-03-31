@@ -1,18 +1,18 @@
-import { Navigation } from "./components/Navigation";
-import DashboardPage from "./pages/DashboardPage";
-import CustomersPage from "./pages/CustomersPage";
-import OrdersPage from "./pages/OrdersPage";
-import ProductsPage from "./pages/ProductsPage";
-import ReportsPage from "./pages/ReportsPage";
-import SettingsPage from "./pages/SettingsPage";
-import UsersPage from "./pages/UsersPage";
-import LoginPage from "./pages/LoginPage";
-import { PolicyProvider } from "./PolicyProvider";
-import { Routes, Route } from "react-router";
-import { BrowserRouter } from "react-router-dom";
+import { Navigation } from './components/Navigation';
+import DashboardPage from './pages/DashboardPage';
+import CustomersPage from './pages/CustomersPage';
+import OrdersPage from './pages/OrdersPage';
+import ProductsPage from './pages/ProductsPage';
+import ReportsPage from './pages/ReportsPage';
+import SettingsPage from './pages/SettingsPage';
+import UsersPage from './pages/UsersPage';
+import LoginPage from './pages/LoginPage';
+import { PolicyProvider } from './PolicyProvider';
+import { Routes, Route } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 
 export const App = () => {
-  const socketUrl = "ws://localhost:8080";
+  const socketUrl = 'ws://localhost:8080';
 
   return (
     <BrowserRouter>
